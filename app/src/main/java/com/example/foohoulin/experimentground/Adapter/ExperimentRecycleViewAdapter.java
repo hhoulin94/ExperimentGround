@@ -36,16 +36,6 @@ public class ExperimentRecycleViewAdapter extends RecyclerView.Adapter<RecyclerV
         holder.experiment_title.setText(String.valueOf(item.get(position)));
         holder.experiment_content.setText(String.valueOf(item.get(position)));
         Picasso.get().load("https://c.76.my/UserImages/Items/TB220/197/859/197859398.jpg").into(holder.experiment_image);
-        holder.main_wrapper.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(holder.experiment_detail_wrapper.getVisibility() == View.VISIBLE){
-
-                }else{
-                    holder.experiment_detail_wrapper.setVisibility(View.VISIBLE);
-                }
-            }
-        });
     }
 
     public static class ExperimentViewHolder extends RecyclerView.ViewHolder {
