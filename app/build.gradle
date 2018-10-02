@@ -4,7 +4,8 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.foohoulin.experimentground"
-        minSdkVersion 19
+        vectorDrawables.useSupportLibrary = true
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"

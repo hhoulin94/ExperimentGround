@@ -32,14 +32,21 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/experiment_image"
-                android:contentDescription="@string/app_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@color/red"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY" />
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"/>
+
+                <ImageView
+                    android:id="@+id/experiment_image"
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:src="@color/red"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
 
                 <LinearLayout
                     android:id="@+id/experiment_detail_wrapper"
