@@ -21,7 +21,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyADoW_nHPNXB1u5_nja-gHSM3_bV2ONlDI"/>
+            android:value="@string/MAP_API_KEY"/>
 
         <activity android:name=".MainActivity">
             <intent-filter>
