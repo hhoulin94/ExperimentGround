@@ -14,7 +14,6 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         experimentRecycleView = findViewById(R.id.experiment_recycler_view);
 
         experimentRecycleView.setHasFixedSize(true);
-//        experimentRecycleView.setLayoutManager(new GridLayoutManager(this , 2));
         experimentRecycleView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         list1 = new ArrayList<ExperimentModal>(){
