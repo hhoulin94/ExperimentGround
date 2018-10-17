@@ -2,25 +2,44 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
     android:background="@color/primaryBackground">
-
-        <Button
-            android:id="@+id/map_button"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="@string/button_place_holder"/>
 
         <LinearLayout
             android:id="@+id/scrollView"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="55dp"
-            android:paddingTop="55dp"
-            android:animateLayoutChanges="true">
+            android:paddingTop="55dp">
+
+            <Button
+                android:id="@+id/map_button"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:shadowColor="@color/black"
+                android:textAllCaps="true"
+                android:background="@drawable/rounded_corner_primary_outline"
+                android:textColor="@color/white"
+                android:text="@string/button_place_holder"/>
+
+            <Button
+                android:id="@+id/map_button1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:shadowColor="@color/black"
+                android:textAllCaps="true"
+                android:background="@drawable/rounded_corner_primary_outline"
+                android:textColor="@color/white"
+                android:text="@string/button_place_holder"/>
+
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/experiment_recycler_view"
                 android:layout_width="match_parent"

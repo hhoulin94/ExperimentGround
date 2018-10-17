@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private ExperimentRecycleViewAdapter experimentRecycleViewAdapter ;
     private List<ExperimentModal> list1 ;
     private Button mapButton ;
+    private Button mapButton1 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext() , MapActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        mapButton1 = findViewById(R.id.map_button1);
+        mapButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mapButton.setVisibility(mapButton.getVisibility() == View.GONE ? View.VISIBLE : View.GONE );
             }
         });
     }
