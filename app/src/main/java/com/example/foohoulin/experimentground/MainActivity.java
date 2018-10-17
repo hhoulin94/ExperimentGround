@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.foohoulin.experimentground.Adapter.ExperimentRecycleViewAdapter;
+import com.example.foohoulin.experimentground.Adapter.QnaRecycleViewAdapter;
 import com.example.foohoulin.experimentground.Modal.ExperimentModal;
+import com.example.foohoulin.experimentground.Modal.QnAModal;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -18,8 +20,11 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView experimentRecycleView ;
+    private RecyclerView qnaRecycleView ;
     private ExperimentRecycleViewAdapter experimentRecycleViewAdapter ;
+    private QnaRecycleViewAdapter qnaRecycleViewAdapter ;
     private List<ExperimentModal> list1 ;
+    private List<QnAModal> qnAModalList ;
     private Button mapButton ;
     private Button mapButton1 ;
 
@@ -28,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //region testing with google map
         experimentRecycleView = findViewById(R.id.experiment_recycler_view);
-
         experimentRecycleView.setHasFixedSize(true);
         experimentRecycleView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
@@ -43,6 +48,24 @@ public class MainActivity extends AppCompatActivity {
 
         experimentRecycleViewAdapter = new ExperimentRecycleViewAdapter(getApplicationContext() , list1 );
         experimentRecycleView.setAdapter(experimentRecycleViewAdapter);
+        //endregion
+
+        //region qna attempt
+        qnaRecycleView = findViewById(R.id.qna_recycler_view);
+        qnaRecycleView.setHasFixedSize(true);
+        qnaRecycleView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+
+        qnAModalList = new ArrayList<QnAModal>(){
+            {
+            add (new QnAModal("Ali" , "I Kacak tak ?" , "https://c.76.my/UserImages/Items/TB220/197/859/197859398.jpg" , "Chicken" , "Kok Kok KEHHHHH" , "https://c.76.my/UserImages/Items/TB220/197/859/197859398.jpg"));
+            add (new QnAModal("Ah Kao" , "Wo Shuai Ma ?" , "https://c.76.my/UserImages/Items/TB220/197/859/197859398.jpg" , "Duck" , "Quack Quack" , "https://c.76.my/UserImages/Items/TB220/197/859/197859398.jpg"));
+            add (new QnAModal("Mutu" , "I handsome or not ?" , "https://c.76.my/UserImages/Items/TB220/197/859/197859398.jpg" , "Duck" , "Quack Quack" , "https://c.76.my/UserImages/Items/TB220/197/859/197859398.jpg"));
+            }
+        };
+
+        qnaRecycleViewAdapter = new QnaRecycleViewAdapter(getApplicationContext() , qnAModalList);
+        qnaRecycleView.setAdapter(qnaRecycleViewAdapter);
+        //endregion
 
         mapButton = findViewById(R.id.map_button);
         mapButton.setOnClickListener(new View.OnClickListener() {
