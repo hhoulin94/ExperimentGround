@@ -1,5 +1,6 @@
 package com.example.foohoulin.experimentground;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RatingBar;
 
 import com.example.foohoulin.experimentground.Adapter.ExperimentRecycleViewAdapter;
 import com.example.foohoulin.experimentground.Adapter.QnaRecycleViewAdapter;
@@ -66,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
         qnaRecycleViewAdapter = new QnaRecycleViewAdapter(getApplicationContext() , qnAModalList);
         qnaRecycleView.setAdapter(qnaRecycleViewAdapter);
         //endregion
+
+        RatingBar myRatingBar = findViewById(R.id.ratingBar);
+        float current = 2.6f;
+
+        ObjectAnimator anim = ObjectAnimator.ofFloat(myRatingBar, "rating", 0, current);
+        anim.setDuration(1000);
+        anim.start();
 
         mapButton = findViewById(R.id.map_button);
         mapButton.setOnClickListener(new View.OnClickListener() {
