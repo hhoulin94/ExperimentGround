@@ -1,5 +1,8 @@
 package com.example.foohoulin.experimentground;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -92,5 +95,23 @@ public class MainActivity extends AppCompatActivity {
                 mapButton.setVisibility(mapButton.getVisibility() == View.GONE ? View.VISIBLE : View.GONE );
             }
         });
+
+        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(mapButton1, "alpha",  1f, 0);
+        fadeOut.setDuration(2000);
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(mapButton1, "alpha", 0, 1f);
+        fadeIn.setDuration(2000);
+
+        final AnimatorSet mAnimationSet = new AnimatorSet();
+
+        mAnimationSet.play(fadeIn).after(fadeOut);
+
+        mAnimationSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mAnimationSet.start();
+            }
+        });
+        mAnimationSet.start();
     }
 }
