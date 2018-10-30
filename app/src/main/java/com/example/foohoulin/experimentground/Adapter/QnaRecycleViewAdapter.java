@@ -46,9 +46,6 @@ public class QnaRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int position) {
         final ExperimentViewHolder holder = (ExperimentViewHolder) viewHolder;
-        RoundedBitmapDrawable roundDrawable = RoundedBitmapDrawableFactory.create(ctx.getResources() , items.get(position).getAskerProfilePicture());
-        roundDrawable.setCircular(true);
-        holder.askerProfilePicture.setImageDrawable(roundDrawable);
 
     }
 
@@ -58,11 +55,9 @@ public class QnaRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     public class ExperimentViewHolder extends RecyclerView.ViewHolder {
-        ImageView askerProfilePicture ;
 
         public ExperimentViewHolder(View v) {
             super(v);
-            askerProfilePicture = v.findViewById(R.id.askerProfilePicture);
 
         }
 

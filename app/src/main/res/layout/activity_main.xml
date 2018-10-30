@@ -8,14 +8,34 @@
     android:layout_height="match_parent"
     android:background="@color/primaryBackground">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/transparent"
+        app:elevation="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Appbar Layout"
+            android:textColor="@color/black"
+            android:textAllCaps="true"
+            android:textAlignment="center"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <LinearLayout
             android:id="@+id/scrollView"
             android:animateLayoutChanges="true"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="55dp"
-            android:paddingTop="55dp">
+            android:paddingBottom="55dp">
 
             <Button
                 android:id="@+id/map_button"
@@ -56,20 +76,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:background="@color/white">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textAllCaps="true"
-                    android:text="Reviews"/>
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/qna_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:scrollbars="none"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dividerColor" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:text="REVIEWS"
+                    android:padding="5dp"/>
             </LinearLayout>
 
             <RatingBar
@@ -82,18 +111,19 @@
                 style = "?android:attr/ratingBarStyleSmall"/>
 
         </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
-        <!--<android.support.design.widget.BottomNavigationView-->
-            <!--android:id="@+id/navigationView"-->
-            <!--android:layout_gravity="bottom"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:background="?android:attr/windowBackground"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:itemBackground="@color/colorPrimary"-->
-            <!--app:itemIconTint="@color/white"-->
-            <!--app:itemTextColor="@color/white"-->
-            <!--app:menu="@menu/navigation"/>-->
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigationView"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:menu="@menu/navigation"/>
 
 
 </android.support.design.widget.CoordinatorLayout>

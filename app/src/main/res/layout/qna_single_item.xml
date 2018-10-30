@@ -3,42 +3,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
     android:padding="8dp"
     android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:orientation="vertical">
 
-        app:cardCornerRadius="15dp"
-        app:contentPadding="15dp">
-        <RelativeLayout
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <FrameLayout
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_centerVertical="true">
-                <ImageView
-                    android:id="@+id/askerProfilePicture"
-                    android:src="@drawable/circle_primary_background"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="T"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"/>
-            </FrameLayout>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+            android:layout_height="wrap_content"
+            android:id="@+id/askerName"
+            android:textColor="@color/black"
+            tools:text="ALI " />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/askerName1"
+            android:textColor="@color/black"
+            tools:text="ALI " />
 
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
