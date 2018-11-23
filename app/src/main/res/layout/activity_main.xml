@@ -99,6 +99,27 @@
                     android:clickable="true"
                     android:text="REVIEWS"
                     android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:text="hahaha"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/text_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:padding="5dp"/>
+
             </LinearLayout>
 
             <RatingBar
@@ -116,6 +137,7 @@
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigationView"
             android:layout_gravity="bottom"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/windowBackground"
