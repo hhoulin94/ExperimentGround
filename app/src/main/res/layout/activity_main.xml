@@ -70,7 +70,6 @@
                 android:visibility="gone"
                 android:scrollbars="none"/>
 
-
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -131,10 +130,20 @@
                 android:rating="0"
                 style = "?android:attr/ratingBarStyleSmall"/>
 
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progress"
+                android:max="100"
+                android:progressDrawable="@drawable/custom_progress_bar"
+                android:progress="45"/>
+
         </LinearLayout>
+
     </android.support.v4.widget.NestedScrollView>
 
-        <android.support.design.widget.BottomNavigationView
+    <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigationView"
             android:layout_gravity="bottom"
             android:visibility="gone"
@@ -146,6 +155,5 @@
             app:itemIconTint="@color/white"
             app:itemTextColor="@color/white"
             app:menu="@menu/navigation"/>
-
 
 </android.support.design.widget.CoordinatorLayout>
